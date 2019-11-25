@@ -1,0 +1,45 @@
+create database BDjogos;
+use BDjogos;
+
+create table Clientes(
+id_cliente int primary key not null auto_increment,
+nome varchar(80) not null,
+pai_cliente varchar(80),
+mae_cliente varchar(80),
+nick_cliente varchar(12) not null,
+senha_cliente varchar(8) not null,
+rg char(9) unique not null,
+cpf char(11) unique not null,
+telefone int(15),
+email varchar(80) not null,
+rua varchar(80) not null,
+numero int(5) not null,
+complemento varchar(80),
+bairro varchar(40),
+cep int(9) not null,
+estado varchar(15) not null,
+cidade varchar(15) not null
+);
+
+create table Funcionario(
+id_funcionario int primary key not null auto_increment,
+funcionario varchar(80) not null,
+rg char(10) unique not null,
+cpf char(14) unique not null,
+sexo varchar(10) not null,
+idade int(3) not null,
+endereco varchar(80) not null,
+telefone varchar(15) not null,
+email varchar(80) not null);
+
+create table jogos(
+id_jogo int primary key not null auto_increment,
+nome varchar(25) not null,
+descricao varchar(100) not null,
+genero varchar(15) not null,
+produtora varchar(20) not null);
+
+create table video_game(
+id_videogame int primary key not null auto_increment,
+nome_modelo varchar(40) not null,
+numero_de_serie varchar(15) not null);
